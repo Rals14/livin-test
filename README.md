@@ -9,3 +9,10 @@ This project aims to automate testing for the Livin app using Appium. The automa
 * Javascript.
 * WebDriverIO.
 * Android Emulator/Real Device: For executing tests.
+
+## Key Workflows to be Automated
+* Amenity reservations
+* Record visits
+* Report incidents
+* Record recurring visits
+* Download payment document
