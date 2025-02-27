@@ -19,7 +19,7 @@ const wdOpts = {
 
 async function createReservation(driver) {
     //select reservation icon
-    const reservation = await driver.$('android=new UiSelector().resourceId("com.merckers.livin:id/navigation_bar_item_icon_view").instance(1)');
+    const reservation = await driver.$('id=com.merckers.livin:id/nav_reservations');
     await reservation.click();
 
     //select reserve button
