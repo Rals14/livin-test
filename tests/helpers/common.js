@@ -1,7 +1,6 @@
 async function swipeLefft(driver) {
     const size = await driver.getWindowSize();
 
-    // Swipe gesture using Appium command
     await driver.execute('mobile: swipeGesture', {
         direction: 'left',
         left: Math.round(size.width * 0.1),
