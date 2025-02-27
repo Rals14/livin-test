@@ -1,5 +1,5 @@
 const { remote } = require('webdriverio');
-const { login, acceptTerms} = require('../helpers/common');
+const { login, acceptTerms } = require('../helpers/common');
 
 const capabilities = {
     platformName: 'Android',
