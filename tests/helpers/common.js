@@ -4,10 +4,23 @@ async function swipeLefft(driver) {
     // Swipe gesture using Appium command
     await driver.execute('mobile: swipeGesture', {
         direction: 'left',
-        left: Math.round(size.width * 0.1),     
-        top: Math.round(size.height * 0.45),     
-        width: Math.round(size.width * 0.8),     
-        height: Math.round(size.height * 0.1), 
+        left: Math.round(size.width * 0.1),
+        top: Math.round(size.height * 0.45),
+        width: Math.round(size.width * 0.8),
+        height: Math.round(size.height * 0.1),
+        percent: 1,
+    });
+}
+
+async function swipeDown(driver) {
+    const size = await driver.getWindowSize();
+
+    await driver.execute('mobile: swipeGesture', {
+        direction: 'up', 
+        left: Math.round(size.width / 2),
+        top: Math.round(size.height * 0.6), 
+        width: Math.round(size.width * 0.1),
+        height: Math.round(size.height * 0.2), 
         percent: 1,
     });
 }
@@ -36,8 +49,11 @@ async function login(driver) {
     await login.click();
 }
 
+
 module.exports = {
     swipeLefft,
     acceptTerms,
     login,
+    swipeDown,
+    
 };
