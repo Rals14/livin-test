@@ -1,4 +1,5 @@
 const { remote } = require('webdriverio');
+const { login, acceptTerms } = require('../helpers/common');
 
 const capabilities = {
     platformName: 'Android',
@@ -15,41 +16,6 @@ const wdOpts = {
     capabilities,
 };
 
-async function swipeLefft(driver) {
-    const size = await driver.getWindowSize();
-
-    // Swipe gesture using Appium command
-    await driver.execute('mobile: swipeGesture', {
-        direction: 'left',
-        left: Math.round(size.width * 0.1),      // 10% desde izquierda
-        top: Math.round(size.height * 0.45),     // 45% desde arriba
-        width: Math.round(size.width * 0.8),     // 80% del ancho
-        height: Math.round(size.height * 0.1), 
-        percent: 1,    // Distancia del deslizamiento como porcentaje (0-1)
-    });
-}
-
-async function acceptTerms(driver) {
-    swipeLefft(driver);
-    for (let i = 0; i < 2; i++) {
-        await swipeLefft(driver);
-    }
-    const check = await driver.$('id=com.merckers.livin:id/checkbox_id');
-    check.click();
-    const next = await driver.$('id=com.merckers.livin:id/next_id');
-    next.click();
-}
-
-async function login(driver) {
-    const user = await driver.$('android=new UiSelector().text("Usuario")');
-    await user.setValue('test_livin25@yopmail.com')
-
-    const password = await driver.$('android=new UiSelector().text("Contraseña")');
-    await password.setValue('Livin123$')
-
-    const login = await driver.$('id=com.merckers.livin:id/firebaseId');
-    await login.click();
-}
 
 // create one time visit
 async function createVisit(driver) {
