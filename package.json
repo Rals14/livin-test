@@ -1,0 +1,22 @@
+{
+  "name": "livin-qa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rals14/livin-test.git"
+  },
+  "author": "rals",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rals14/livin-test/issues"
+  },
+  "homepage": "https://github.com/Rals14/livin-test#readme",
+  "description": "",
+  "devDependencies": {
+    "webdriverio": "^9.10.1"
+  }
+}
